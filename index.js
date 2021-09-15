@@ -27,22 +27,29 @@ app.use(express.static(path.resolve(__dirname,'public')));
 app.post('/upload', upload.single('upload'), (req, res) => {
   if(req.file){
 
-    console.log("File name",req.body.filename)
+    console.log("File name",req.file.filename)
     const python = spawn('python', ['creator.py',`data/`+req.file.filename,'data/Trees/','100','100','public/Mosaic.jpeg'])
 
     python.stdout.on('data', function (data) {
       console.log('Pipe data from python script ...')
       console.log(data.toString())
   
+      python.stdout.on('close', function (code) {
+        console.log('Closed with code ',code)
+        res.render('pages/image',{data: "Mosaic.jpeg"});
+      })
     })
+    
 
-    python.stdout.on('close', function (code) {
-      console.log('Closed with code ',code)
-      res.render('pages/image',{data: "Mosaic.jpeg"});
-    })
+    
   }else{
     res.status(400).json({msg:"Img Not Received"})
   }
+})
+
+app.get('/check',(req,res)=>{
+  console.log("Check Route")
+  res.render('pages/image',{data: "Mosaic.jpeg"});
 })
 
 app.get('/',(req,res)=>{
