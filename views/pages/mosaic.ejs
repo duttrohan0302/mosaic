@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container" id="top">
+
+<header>
+  <link rel="stylesheet" href="css/base.css">  
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/vendor.css">   
+</header>
+
+<section id="intro">   
+
+  <div class="intro-overlay"></div>	
+
+  <div class="intro-content">
+    <div class="row">
+
+      <div class="col-twelve">
+
+        <h1>Mosaic Creation</h1>
+     
+        <h4>Please Upload an Image and we'll generate that image with thousands of tiny images</h4>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <input type="file" accept="image/*" class="stroke" name="upload" >
+          <br>
+          <br>
+          <input type="submit" class="button stroke" value="Upload">
+        </form>
+        <h5>Data Science Project 1</h5>
+
+      </div>  
+      <ul class="intro-social">        
+        <li><a href="https://github.com/duttrohan0302/mosaic"><i class="fa fa-github"></i></a></li>
+     </ul>  
+      
+    </div>   		 		
+  </div>
+
+</section> 
+
+</body>
+
+</html>
