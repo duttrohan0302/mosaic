@@ -3,14 +3,6 @@ import os, random, argparse
 from PIL import Image
 import numpy as np
 import sys
-# parser = argparse.ArgumentParser(description='Creates a photomosaic from input images')
-# parser.add_argument('--target', dest='target', required=True, help="Image to create mosaic from")
-# parser.add_argument('--images', dest='images', required=True, help="Diectory of images")
-# parser.add_argument('--grid', nargs=2, dest='grid', required=True, help="Size of photo mosaic")
-# parser.add_argument('--output', dest='output', required=False)
-
-# args = parser.parse_args()
-
 
 def getImages(images_directory):
     files = os.listdir(images_directory)
@@ -154,6 +146,7 @@ if resize_input:
             int(target_image.size[1] / grid_size[0]))
     print("max tile dims: %s" % (dims,))
     # resize
+    print("DIMS",dims)
     for img in input_images:
         img.thumbnail(dims)
 
