@@ -36,8 +36,8 @@ https://mosaic-ds.herokuapp.com/
 ## Novelty
 1. Generation of dataset for images(tiles), using extensions and small python scripts  
 2. Finding nearest neighbour in terms of colors for each predefined unit of the target image from the data set tiles  
-3. Randomization of images to ensure that maximum pixels are covered for each color  
-4. Using multiple build packs in Heroku for both Node.js and Python and experimenting with amazon ec2 for deployment
+3. Randomization of images to ensure that maximum pixels are covered for each color   
+4. Using multiple build packs in Heroku for both Node.js and Python and experimenting with amazon ec2 for deployment  
 
 ## Limitation
 This technique is dependent on the variety of images in the dataset in terms of colors, higher the number of images in each color, better will be the mosaic.
